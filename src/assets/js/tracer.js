@@ -1,10 +1,10 @@
 
 // Config Settings:
-// 
+//
 // debug: bool - set false to turn off tracer
 // recursive - set true to attempt deep parsing of nested objects
 // tests - for dev purposes, a bunch of use cases setup in paired arrays
-// 
+//
 var config = {
   debug: true,
   recursive: true,
@@ -42,9 +42,8 @@ function runTests(Tests){
 
 
 // GO
-// 
 // say hello and run some tests
-// 
+//
 $(function(){
   dbt.trace('Tracer - parse out *whatever*', 1)
   dbt.trace('debug: '+config.debug)
@@ -55,7 +54,7 @@ $(function(){
 
 
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 // Tracer
@@ -68,7 +67,7 @@ $(function(){
     }());
     exports.dbt = exports.dbt || {};
     exports.dbt.trace = trace;
-    
+
     var Tracer = (function(el){
         // output messages to the console based
         var Tracer = function(msg, mod){
@@ -113,7 +112,7 @@ $(function(){
                 var key
                 for (key in obj) {
                     trace(key+' :: '+obj[key])
-                    if(config.recursive){ 
+                    if(config.recursive){
                         trace(obj[key], typeof(obj[key])!='string')
                     }
                 }
